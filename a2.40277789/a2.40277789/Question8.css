@@ -1,0 +1,167 @@
+/*Question 8 - CSS part*/
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI';
+    background-image: linear-gradient(to right, pink, purple);
+}
+
+header,footer {
+    background-color: #ffc107;
+    padding: 10px;
+    text-align: center;
+    display: flex; /* Add flex display */
+    align-items: center; /* Vertically center items */
+}
+
+header h1 {
+    margin: 0;
+    color: #333;
+    font-size: 25px;
+    margin-left: 15%; 
+
+}
+
+#currentDateTime {
+    margin-left: right; 
+}
+
+main section#home h4 {
+    margin-bottom: 40px;
+}
+
+nav.side-menu {
+    background-color: #00bcd4;
+    padding: 5px;
+    width: 200px;
+    position: fixed;
+    top: 0;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+nav.side-menu ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+nav.side-menu li {
+    margin-bottom: 25px;
+}
+
+nav.side-menu a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    padding: 10px;
+    transition: background-color 0.5s;
+    width: 100%;
+    text-align: center;
+    border-radius: 5px;
+}
+
+nav.side-menu a:hover {
+    background-color: #009688;
+}
+
+main {
+    margin-left: 220px;
+    padding: 20px;
+    padding-bottom: 80px;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1%;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+footer a {
+    color: #ffc107;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+img {
+    max-width: 15%;
+    max-height: auto;
+    align-items: left;
+}
+
+form {
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+input,
+select {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    margin-bottom: 40px;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+
+.interested-button {
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.interested-button.interested {
+    background-color: green;
+}
+
+.pet {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.pet img {
+    max-width: 30%; /* Adjust the width of the image as needed */
+    margin-right: 20px; /* Add some space between the image and description */
+}
+
+.pet-info {
+    flex: 1; /* Allow the description to take up remaining space */
+}
+
+.pet-info h3 {
+    margin-top: 0; /* Remove default top margin for heading */
+}
+
+

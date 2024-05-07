@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>Exercise 5</title>
+</head>
+<body>
+    <p><strong>User Information:</strong></p>
+    <div id="content"></div>
+
+    <script>
+        function getUserInfo() {
+            // Prompt the user for full name and age
+            var fullName = prompt("What is your full name?");
+            var age = prompt("How old are you?");
+
+            // Build the string
+            var userInfoString = "Hi, my name is " + fullName + " and I’m " + age + " years old.";
+
+            // Insert the string into the container div with id 'content'
+            var contentDiv = document.getElementById("content");
+            contentDiv.innerHTML = userInfoString;
+        }
+
+        // Call the getUserInfo function after the page has loaded
+        window.onload = getUserInfo;
+    </script>
+</body>
+</html>

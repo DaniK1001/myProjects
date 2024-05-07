@@ -1,0 +1,107 @@
+<!--Assignment 1 - SOEN 287 - Danial Kouba-->
+<!-- Question8 - Browse-->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>PawsPal Haven - Browse</title>
+        <link rel="stylesheet" href="Question8.css">
+        <script src="website.js" defer></script>
+
+    </head>
+    <body>
+
+
+        <header>
+            <h1>PawsPal Haven</h1>
+            <a href="home.html"><img src="dog-cat.jpg" alt="Pets"></a>
+            <span id="currentDateTime"></span>
+        </header>
+
+        <nav class="side-menu">
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="browse.html">Browse Available Pets</a></li>
+                <li><a href="find-pet.html">Find a Dog/Cat</a></li>
+                <li><a href="dog-care.html">Dog Care</a></li>
+                <li><a href="cat-care.html">Cat Care</a></li>
+                <li><a href="giveaway.html">Give Away</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </nav>
+
+        <main>
+            <section id="browse">
+                <h2>Browse Available Pets</h2>
+                <div class="pet">
+                    <img src="dog.jpg" alt="Pet 1">
+                    <div class="pet-info">
+                        <h3>Fluffy</h3>
+                        <p>Breed: Labrador Retriever</p>
+                        <p>Age: 2 years</p>
+                        <p>Gender: Female</p>
+                        <p>Color: Golden</p>
+                        <p>Owner's Name: John Doe</p>
+                        <p>Owner's Email: john.doe@outlook.com</p>
+                        <p>Gets along with other dogs</p>
+                        <p>"Fluffy is the best companion anyone could ask for! &#128526;"</p>
+                        <button class="interested-button" onclick="toggleInterested(this)">Interested</button>
+                    </div>
+                </div>
+                <div class="pet">
+                    <img src="cat.jpg" alt="Pet 2">
+                    <div class="pet-info">
+                        <h3>Buddy</h3>
+                        <p>Breed: Siamese Cat</p>
+                        <p>Age: 1 year</p>
+                        <p>Gender: Male</p>
+                        <p>Color: Seal Point</p>
+                        <p>Owner's Name: Michael Smith</p>
+                        <p>Owener's Email: michael.sm@hotmail.com</p>
+                        <p>Compatibility: Gets along with other cats</p>
+                        <p>"Buddy is a curious and affectionate cat. He enjoys lounging in sunny spots and chasing toys."</p>
+                        <button class="interested-button" onclick="toggleInterested(this)">Interested</button>
+                    </div>
+                </div>
+                <div class="pet">
+                    <img src="dog1.jpg" alt="Pet 3">
+                    <div class="pet-info">
+                        <h3>Rex</h3>
+                        <p>Breed: German Shepherd</p>
+                        <p>Age: 3 years</p>
+                        <p>Gender: Male</p>
+                        <p>Color: Black and Tan</p>
+                        <P>Owner's Name: Emily Johnson
+                        <p>Owner's Email: emily.j@gmail.com</p>
+                        <p>Gets along with cats</p>
+                        <p>"Rex loves playing fetch and cuddling on the couch. He's a great companion!"</P>
+                        <button class="interested-button" onclick="toggleInterested(this)">Interested</button>
+                    </div>
+                </div>
+                
+                <div class="pet">
+                    <img src="cat1.jpg" alt="Pet 4">
+                    <div class="pet-info">
+                        <h3>Whiskers</h3>
+                        <p>Breed: Persian Cat</p>
+                        <p>Age: 2 years</p>
+                        <p>Gender: Female</p>
+                        <p>Color: White</p>
+                        <p>Name: Sophia Brown</p>
+                        <p>Email: sophia.b@yahoo.com</p>
+                        <p>Compatibility: Gets along with small children</p>
+                        <p>"Whiskers is a playful and affectionate Persian cat. &#128049; She enjoys lounging in sunbeams and chasing feather toys around the house."</p>
+                        <button class="interested-button" onclick="toggleInterested(this)">Interested</button>
+                    </div>
+                </div>
+                
+            </section>
+        </main>
+
+        <footer>
+            <a href="privacy.html">Privacy/Disclaimer Statement</a>
+        </footer>
+
+    </body>
+</html>

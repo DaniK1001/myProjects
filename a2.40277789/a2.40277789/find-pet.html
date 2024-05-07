@@ -1,0 +1,99 @@
+<!--Assignment 1 - SOEN 287 - Danial Kouba-->
+<!-- Question8 - Find pet-->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>PawsPal Haven - Find pet</title>
+        <link rel="stylesheet" href="Question8.css">
+        <script src="website.js" defer></script> <!-- Include JavaScript file -->
+
+    </head>
+    <body>
+
+        <header>
+            <h1>PawsPal Haven</h1>
+            <a href="home.html"><img src="dog-cat.jpg" alt="Pets"></a>
+            <span id="currentDateTime"></span>
+        </header>
+
+        <nav class="side-menu">
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="browse.html">Browse Available Pets</a></li>
+                <li><a href="find-pet.html">Find a Dog/Cat</a></li>
+                <li><a href="dog-care.html">Dog Care</a></li>
+                <li><a href="cat-care.html">Cat Care</a></li>
+                <li><a href="giveaway.html">Give Away</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </nav>
+
+        <main>
+            <section id="find-pet">
+                <h2>Find a Dog/Cat</h2>
+                <form id="petForm">
+                    <label for="petType">Select Cat or Dog:</label>
+                    <select id="petType" name="petType">
+                        <option value="Please-Choose">Please choose</option>
+                        <option value="cat">Cat</option>
+                        <option value="dog">Dog</option>
+                    </select>
+        
+                    <label for="breed">Breed:</label>
+                    <select id="breed" name="breed">
+                        <option value="Please-Choose">Please choose</option>
+                        <option value="ragdoll">Ragdoll</option>
+                        <option value="persian">Persian</option>
+                        <option value="labrador Retriever">Labrador Retriever</option>
+                        <option value="german-shepherd">German Shepherd</option>
+                    </select>
+        
+                    <label for="age">Preferred Age:</label>
+                    <select id="age" name="age">
+                        <option value="Please-Choose">Please choose</option>
+                        <option value="puppy/kitten">Puppy/Kitten</option>
+                        <option value="adult">Adult</option>
+                        <option value="senior">Senior</option>
+                        <option value="doesn't-matter">Doesn't Matter</option>
+                    </select>
+        
+                    <label for="gender">Preferred Gender:</label>
+                    <select id="gender" name="gender">
+                        <option value="Please-Choose">Please choose</option>
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                        <option value="doesn't-matter">Doesn't Matter</option>
+                    </select>
+        
+                    <fieldset>
+                        <legend>Compatibility:</legend>
+        
+                        <div class="checkboxes">
+                            <input type="checkbox" id="otherDogs" name="otherDogs">
+                            <label for="otherDogs">Gets along with other dogs</label>
+        
+                            <input type="checkbox" id="otherCats" name="otherCats">
+                            <label for="otherCats">Gets along with other cats</label>
+        
+                            <input type="checkbox" id="smallChildren" name="smallChildren">
+                            <label for="smallChildren">Gets along with small children</label>
+                        </div>
+                    </fieldset>
+        
+                    <br>
+                    <button type="submit">Submit</button>
+                    <button type="reset">Clear</button>
+        
+                </form>
+            </section>
+        </main>
+        
+
+        <footer>
+            <a href="privacy.html">Privacy/Disclaimer Statement</a>
+        </footer>
+
+    </body>
+</html>

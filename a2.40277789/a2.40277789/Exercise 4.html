@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Online Order Form</title>
+<style>
+    .container {
+  margin-top: 20px;
+  border: 1px solid black;
+  padding: 10px;
+  width: 50%;
+  text-align: left;
+}
+
+.book-order th, .book-order td {
+  padding: 5px;
+}
+
+input {
+  width: 30%;
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+  <h2>Order Items Online</h2>
+    <table class="book-order">
+      <tr>
+        <th>Book</th>
+        <th>Quantity</th>
+        <th>Price</th>
+
+      </tr>
+      <tr>
+        <td>Basic Web Programming</td>
+        <td>
+          <input type="text" id="BasicWebProgramming" >
+        </td>
+        <td>$19.99</td>
+      </tr>
+      <tr>
+        <td>Intro to PHP</td>
+        <td>
+            <input type ="text" id="IntrotoPHP">
+        </td>
+        <td>$86.00</td>
+      </tr>
+      <tr>
+        <td>Advanced JQuery</td>
+        <td>
+            <input id="AdvancedJQuery">
+        </td>
+        <td>$55.00</td>
+      </tr>
+    </table>
+    <br>
+    <button id="button" type="button" onclick="calculateTotal()">Calculate the order</button>
+
+  <p id="totalCost"></p>
+</div>
+<script src="Exercise4.js"></script>
+</body>
+</html>
