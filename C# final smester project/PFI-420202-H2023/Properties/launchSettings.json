@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "PFI-420202-H2023": {
+      "commandName": "Project",
+      "commandLineArgs": "../../../partie_test.txt\r\n"
+    }
+  }
+}

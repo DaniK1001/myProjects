@@ -1,0 +1,9 @@
+﻿partie "Une partie fantastique" 10 40                                         
+personnage j Jim
+monstre U urg
+personnage B Bill
+personnage b Bob
+monstre w waluigi
+trésor T tofu
+sortie X cour
+sortie x jardin
