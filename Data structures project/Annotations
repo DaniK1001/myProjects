@@ -1,0 +1,227 @@
+Pseudo-code for SPQ:
+class SPQ<K extends Comparable<K>, V> {
+    Entry<K, V>[] heap
+    boolean isMinHeap
+    int size
+    static final int DEFAULT_CAPACITY = 10
+
+    // Constructor with initial capacity and heap type
+    SPQ(initialCapacity: int, isMinHeap: boolean):
+        heap = new Entry[initialCapacity]
+        this.isMinHeap = isMinHeap
+        size = 0
+
+    // Constructor with default capacity and heap type
+    SPQ(isMinHeap: boolean):
+        this(DEFAULT_CAPACITY, isMinHeap)
+
+    // Method to toggle between min-heap and max-heap
+    toggle():
+        isMinHeap = !isMinHeap
+        buildHeap()
+
+    // Method to insert a new key-value pair into the priority queue
+    insert(key: K, value: V): Entry<K, V>
+        if size == heap.length:
+            resizeHeap()
+        entry = new Entry<>(key, value)
+        heap[size] = entry
+        upHeap(size)
+        size++
+        return entry
+
+    // Method to remove and return the entry with the top key
+    removeTop(): Entry<K, V>
+        if isEmpty():
+            return null
+        swap(0, size - 1)
+        top = heap[--size]
+        heap[size] = null
+        downHeap(0)
+        return top
+
+    // Method to return the entry with the top key without removing it
+    top(): Entry<K, V>
+        if isEmpty():
+            return null
+        return heap[0]
+
+    // Method to remove a specific entry from the priority queue
+    remove(entry: Entry<K, V>): Entry<K, V>
+        index = indexOf(entry)
+        if index == -1:
+            return null
+        swap(index, size - 1)
+        removed = heap[--size]
+        heap[size] = null
+        if index < size:
+            downHeap(index)
+            upHeap(index)
+        return removed
+
+    // Method to replace the key of a specific entry in the priority queue
+    replaceKey(entry: Entry<K, V>, newKey: K): K
+        index = indexOf(entry)
+        if index == -1:
+            throw NoSuchElementException
+        oldKey = entry.getKey()
+        entry.setKey(newKey)
+        if compare(newKey, oldKey) < 0:
+            upHeap(index)
+        else:
+            downHeap(index)
+        return oldKey
+
+    // Method to replace the value of a specific entry in the priority queue
+    replaceValue(entry: Entry<K, V>, newValue: V): V
+        index = indexOf(entry)
+        if index == -1:
+            throw NoSuchElementException
+        oldValue = entry.getValue()
+        entry.setValue(newValue)
+        return oldValue
+
+    // Method to return the current state of the priority queue (Min or Max)
+    state(): string
+        return isMinHeap ? "Min" : "Max"
+
+    // Method to check if the priority queue is empty
+    isEmpty(): boolean
+        return size == 0
+
+    // Method to return the current size of the priority queue
+    size(): int
+        return size
+
+    // Helper method to move an entry up the heap
+    upHeap(index: int):
+        while index > 0:
+            parentIndex = (index - 1) / 2
+            if compare(heap[index].getKey(), heap[parentIndex].getKey()) < 0:
+                swap(index, parentIndex)
+                index = parentIndex
+            else:
+                break
+
+    // Helper method to move an entry down the heap
+    downHeap(index: int):
+        while true:
+            leftChildIndex = 2 * index + 1
+            rightChildIndex = 2 * index + 2
+            targetIndex = index
+            if leftChildIndex < size and compare(heap[leftChildIndex].getKey(), heap[targetIndex].getKey()) < 0:
+                targetIndex = leftChildIndex
+            if rightChildIndex < size and compare(heap[rightChildIndex].getKey(), heap[targetIndex].getKey()) < 0:
+                targetIndex = rightChildIndex
+            if targetIndex == index:
+                break
+            swap(index, targetIndex)
+            index = targetIndex
+
+    // Helper method to build a heap from current elements
+    buildHeap():
+        for i from size / 2 - 1 down to 0:
+            downHeap(i)
+
+    // Helper method to swap two entries in the heap
+    swap(i: int, j: int):
+        temp = heap[i]
+        heap[i] = heap[j]
+        heap[j] = temp
+
+    // Helper method to find the index of a specific entry in the heap
+    indexOf(entry: Entry<K, V>): int
+        for i from 0 to size - 1:
+            if heap[i].equals(entry):
+                return i
+        return -1
+
+    // Helper method to resize the heap array
+    resizeHeap():
+        newHeap = new Entry[heap.length * 2]
+        copyElements(heap, 0, newHeap, 0, size)
+        heap = newHeap
+
+    // Helper method to compare two keys based on heap type
+    compare(key1: K, key2: K): int
+        return isMinHeap ? key1.compareTo(key2) : key2.compareTo(key1)
+
+    // Inner class representing an entry in the priority queue
+    class Entry<K, V>:
+        key: K
+        value: V
+
+        // Constructor for Entry
+        Entry(key: K, value: V):
+            this.key = key
+            this.value = value
+
+        // Method to get the key of the entry
+        getKey(): K
+            return key
+
+        // Method to set a new key for the entry
+        setKey(key: K):
+            this.key = key
+
+        // Method to get the value of the entry
+        getValue(): V
+            return value
+
+        // Method to set a new value for the entry
+        setValue(value: V):
+            this.value = value
+
+        // Method to check equality with another object
+        equals(o: Object): boolean
+            if this == o:
+                return true
+            if o == null or getClass() != o.getClass():
+                return false
+            entry = (Entry<?, ?>) o
+            return key.equals(entry.key) and value.equals(entry.value)
+
+        // Method to compute the hash code of the entry
+        hashCode(): int
+            result = key.hashCode()
+            result = 31 * result + value.hashCode()
+            return result
+
+
+
+toggle():
+
+Time Complexity:
+O(n)
+Explanation: The toggle() method calls buildHeap(), which iterates over the elements in the heap array (size elements)
+and performs downHeap() operations. In the worst case, building the heap takes
+O(n) time complexity, where n is the number of elements in the heap.
+
+
+remove(entry):
+
+Time Complexity:
+O(logn)
+Explanation: Removing an entry involves locating the entry in the heap (which takes
+O(n) time in the worst case due to the indexOf() method), followed by swapping and potentially performing downHeap()
+and upHeap() operations. The heap operations (downHeap or upHeap) have a time complexity of
+O(logn).
+
+
+
+replaceKey(entry, newKey):
+
+Time Complexity:
+O(logn)
+Explanation: Replacing the key of an entry involves finding the entry (which takes
+O(n) time in the worst case), updating the key, and then adjusting the heap with upHeap() or downHeap().
+These heap operations have a time complexity of
+O(logn).
+
+
+replaceValue(entry, newValue):
+
+Time Complexity:
+O(1)
+Explanation: Replacing the value of an entry is done in constant time O(1),
+as it only involves updating the value of the entry object.
