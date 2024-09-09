@@ -1,0 +1,21 @@
+apple banana cherry
+$pecial_w0rd !nval!d ch@racter$
+123number456
+hello-world
+example,test,case,comma,separated
+only_alpha alpha
+alphanum123 ALPHA_NUM123 4567
+skipme skipyou skipall
+sort these words into order
+zebra apple banana cherry
+end_of_the_line
+ALPHA alpha ALPHA alphanumeric
+apple,,banana,,,cherry
+this is a test file
+with some special characters %^&*()_+{}|:"<>?
+do_not_skip these_words
+multiple spaces   between words
+tabs	included	here
+ab12cd 
+ab12cd@ef
+ab12cd@ef3
